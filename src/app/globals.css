@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+/* ===== 色：会社に合わせて自由に変えてください（docs/customize.md） ===== */
+@theme inline {
+  /* 基調色（ボタン・見出し）。初期値はマルーン */
+  --color-primary: #701648;
+  /* 注意を引く箇所（未読など）の文字・ボタン：ゴールド */
+  --color-gold: #8c6a1c;
+  /* 注意を引く箇所の線・飾り：明るいゴールド（文字には使わない） */
+  --color-gold-line: #c9a24a;
+  /* 未読を示す表示だけに使う：赤（BOXの「未読○」、ベルの未読数、一覧の未読件数、未確認のお知らせの枠と「未確認」） */
+  --color-unread: #c8102e;
+  --font-sans: var(--font-noto-sans-jp);
+}
+
+html {
+  /* 文字の基本サイズ 16px（最小でも 14px を守る） */
+  font-size: 16px;
+}
+
+body {
+  background: #ffffff;
+  color: #2b1a22;
+}
+
+/* Instagram の埋め込み：スマホの幅に合わせる（もともとの最小幅 326px を外す） */
+.instagram-embed .instagram-media,
+.instagram-embed iframe {
+  min-width: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+.instagram-embed .instagram-media > a {
+  display: block;
+  padding: 1rem;
+  color: var(--color-gray-600);
+}
