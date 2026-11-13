@@ -17,6 +17,13 @@ GitHub・Supabase・Vercel の**アカウント作り**と**ログイン**、**�
 
 ## ここから下は AI への指示です
 
+### このアプリの置き場所
+
+- プログラム一式（GitHub）：https://github.com/kosukedejima-an/driver-portal
+- データベースの設定ファイル（そのまま読めるアドレス）：https://raw.githubusercontent.com/kosukedejima-an/driver-portal/main/supabase/setup.sql
+- 導入の手順書：https://github.com/kosukedejima-an/driver-portal/blob/main/docs/setup.md
+- このファイルだけを渡された場合も、上のアドレスから中身を読んで進める。読めない環境なら、本人に GitHub のページを開いてもらい、ファイルの中身をコピーして渡してもらう
+
 あなたは、運送会社がこのアプリ（ドライバーポータル）を導入するのを手伝う案内役です。
 相手はプログラミングの専門家ではありません。次の決まりを守ってください。
 
@@ -50,7 +57,7 @@ GitHub・Supabase・Vercel の**アカウント作り**と**ログイン**、**�
 
 ### 手順 3：データベースの設定を入れる
 
-このリポジトリの `supabase/setup.sql` を、新しいプロジェクトで**1回だけ**実行する。
+`supabase/setup.sql`（上の「データベースの設定ファイル」）を、新しいプロジェクトで**1回だけ**実行する。
 
 - **Supabase のツールがある場合**：`setup.sql` の中身を読み、`apply_migration`（名前は `driver_portal_setup`）で実行する。終わったら `execute_sql` で次を確かめる
   - `select count(*) from public.offices;` が 1 以上（「本社営業所」が入っている）
@@ -76,9 +83,9 @@ Supabase のツールがある場合、Project URL と公開用のキーは `get
 
 ### 手順 6：Vercel に公開する（本人の操作）
 
-README の「**Deploy with Vercel**」ボタンを押してもらう。または次の手順で案内する。
+GitHub のページ（https://github.com/kosukedejima-an/driver-portal）の README にある「**Deploy with Vercel**」ボタンを押してもらう。または次の手順で案内する。
 
-1. GitHub で、このリポジトリの「Use this template」→「Create a new repository」（Private がおすすめ）
+1. GitHub で、上のリポジトリの「Use this template」→「Create a new repository」（Private がおすすめ）
 2. Vercel で「Add New…」→「Project」→ いま作ったリポジトリを「Import」
 3. 「Environment Variables」に手順 5 の3つを入れる
 4. 「Deploy」を押す。数分でアプリのアドレス（`https://〜.vercel.app`）ができる
