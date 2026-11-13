@@ -27,6 +27,17 @@
 パソコンとメールアドレスがあれば、30分〜1時間で始められます。
 → **[導入の手順](./docs/setup.md)**
 
+### AI に任せて導入する（おすすめ）
+
+[AI_SETUP.md](./AI_SETUP.md) を Claude などの AI に渡して、「**このファイルの手順で、ドライバーポータルの導入を手伝ってください**」と頼んでください。
+AI が質問しながら一歩ずつ案内します。Supabase のコネクタを入れた AI なら、データベースの設定も代わりに入れます。
+
+### ボタンで公開する
+
+Supabase のプロジェクトを作り、`supabase/setup.sql` を実行したら、このボタンで Vercel に公開できます（自分用のコピー作りと公開をまとめて行います）。
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fkosukedejima-an%2Fdriver-portal&project-name=driver-portal&repository-name=driver-portal&env=NEXT_PUBLIC_SUPABASE_URL,NEXT_PUBLIC_SUPABASE_ANON_KEY,SUPABASE_SERVICE_ROLE_KEY&envDescription=Supabase%20%E3%81%AE%20Project%20Settings%20%E2%86%92%20API%20Keys%20%E3%81%AB%E3%81%82%E3%82%8B%E5%80%A4%E3%82%92%E5%85%A5%E3%82%8C%E3%81%A6%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%EF%BC%88service_role%20%E3%81%AF%E7%A7%98%E5%AF%86%E3%81%AE%E3%82%AD%E3%83%BC%EF%BC%89&envLink=https%3A%2F%2Fgithub.com%2Fkosukedejima-an%2Fdriver-portal%2Fblob%2Fmain%2Fdocs%2Fsetup.md)
+
 1. Supabase（データの置き場所）を作り、`supabase/setup.sql` を1回実行する
 2. Vercel（アプリを動かす場所）に、このプログラムを公開する
 3. アプリの `/setup` で、最初の管理者を登録する
